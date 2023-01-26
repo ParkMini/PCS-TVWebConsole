@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Web Console</title>
+    <!-- StyleSheet -->
+    <style>
+        #login input,
+        #login button {
+            margin-top: 10px;
+            padding: 8px 30px;
+            text-align: center;
+        }
+
+        #panel {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center">TV Web Console</h1>
+    <h3 align="center">Made By. HeoJun</h3>
+    <div id="login">
+        <h2 align="center" style="color: blue;">사이트에 접속하기 전 인증을 진행하여 주십시오!</h2>
+        <form id="login" align="center">
+            <input type="text" placeholder="아이디를 입력해주세요" id="id"><br>
+            <input type="password" placeholder="비밀번호를 입력해주세요" id="pwd"><br>
+            <button>로그인</button>
+        </form>
+    </div>
+    <div id="panel">
+        <h2>영상 업로드</h2>
+        <form action="http://twc.pcs.pah.kr/uploadVid1" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file1">
+            <input type="submit">
+        </form>
+        <form action="http://twc.pcs.pah.kr/uploadVid2" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file2">
+            <input type="submit">
+        </form>
+        <p style="font-size: 1.5em">1번에 등록된 영상</p>
+        <iframe src="http://twc.pcs.pah.kr/video1" frameborder="0" width="800px"
+            height="450px"></iframe>
+        <p style="font-size: 1.5em">2번에 등록된 영상</p>
+        <iframe src="http://twc.pcs.pah.kr/video2" frameborder="0" width="800px"
+            height="450px"></iframe>
+        <form action="http://twc.pcs.pah.kr/tv1" method="post">
+            <h2>[ 1번 TV ]</h2>
+            <input type="radio" name="tv1" id="vid1" value="vid1">1번 영상 재생
+            <input type="radio" name="tv1" id="vid2" value="vid2">2번 영상 재생
+            <input type="submit" value="설정하기" id="submit">
+        </form>
+        <form action="http://twc.pcs.pah.kr/tv2" method="post">
+            <h2>[ 2번 TV ]</h2>
+            <input type="radio" name="tv2" id="vid1" value="vid1">1번 영상 재생
+            <input type="radio" name="tv2" id="vid2" value="vid2">2번 영상 재생
+            <input type="submit" value="설정하기" id="submit">
+        </form>
+        <form action="http://twc.pcs.pah.kr/tv3" method="post">
+            <h2>[ 3번 TV ]</h2>
+            <input type="radio" name="tv3" id="vid1" value="vid1">1번 영상 재생
+            <input type="radio" name="tv3" id="vid2" value="vid2">2번 영상 재생
+            <input type="submit" value="설정하기" id="submit">
+        </form>
+        <form action="http://twc.pcs.pah.kr/tv4" method="post">
+            <h2>[ 4번 TV ]</h2>
+            <input type="radio" name="tv4" id="vid1" value="vid1">1번 영상 재생
+            <input type="radio" name="tv4" id="vid2" value="vid2">2번 영상 재생
+            <input type="submit" value="설정하기" id="submit">
+        </form>
+        <form action="http://twc.pcs.pah.kr/tv5" method="post">
+            <h2>[ 5번 TV ]</h2>
+            <input type="radio" name="tv5" id="vid1" value="vid1">1번 영상 재생
+            <input type="radio" name="tv5" id="vid2" value="vid2">2번 영상 재생
+            <input type="submit" value="설정하기" id="submit">
+        </form>
+        <form action="http://twc.pcs.pah.kr/tv6" method="post">
+            <h2>[ 6번 TV ]</h2>
+            <input type="radio" name="tv6" id="vid1" value="vid1">1번 영상 재생
+            <input type="radio" name="tv6" id="vid2" value="vid2">2번 영상 재생
+            <input type="submit" value="설정하기" id="submit">
+        </form>
+        <form action="http://twc.pcs.pah.kr/tv7" method="post">
+            <h2>[ 7번 TV ]</h2>
+            <input type="radio" name="tv7" id="vid1" value="vid1">1번 영상 재생
+            <input type="radio" name="tv7" id="vid2" value="vid2">2번 영상 재생
+            <input type="submit" value="설정하기" id="submit">
+        </form>
+
+    </div>
+    </div>
+</body>
+<script>
+    const Hfp20BHon4dZfDUczYjp = String("SGVsbG9Xb3JsZA==");
+    const IMqipBEtmfUoDGUUDWlq = String("SGVvSnVu");
+    const LEv1BK7fHyR4cZZ2pNiw = String("HelloWorld");
+    const KN1bss6r34AamezMwPIA = String("YWRtaW4="); // ID: admin
+    const yB1ZqK3XEUqACRjYRGfV = String("SGF2ZUFHb29kRGF5");
+    const colbLGS9q7ZlQRoeuyj7 = String("V2h5WW91VHJ5RGVjb2Rl");
+    const olXiyT22nPrie8Uk8vxS = String("dHZ3ZWJjb25zb2xl"); // PW: tvwebconsole
+    const M7BPlT0p6I10a8bmAk5U = String("WW91UmVhbGx5QmFkR3V5");
+    const GrforATSChUyP4QaQQ2V = String("eEQ=");
+
+    const loginForm = document.querySelector("#login");
+    loginForm.addEventListener("submit", login);
+
+    function login(event) {
+        const id = document.querySelector("#id").value;
+        const password = document.querySelector("#pwd").value;
+        event.preventDefault();
+        if (id == atob(KN1bss6r34AamezMwPIA) && password == atob(olXiyT22nPrie8Uk8vxS)) {
+            document.querySelector("#login").style.display = "none";
+            document.querySelector("#panel").style.display = "block";
+            setCookie("loginStatus", 'true', 1);
+        } else {
+            alert("아이디 혹은 비밀번호가 올바르지 않습니다.\n아이디 및 비밀번호는 대소문자를 구분합니다.");
+        }
+    }
+    
+    function setCookie(cookie_name, value, days) {
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate() + days);
+        var cookie_value = escape(value) + ((days == null) ? '' : '; expires=' + exdate.toUTCString());
+        document.cookie = cookie_name + '=' + cookie_value;
+    }
+    
+    function checkCookie() {
+        if(document.cookie == "loginStatus=true") {
+            document.querySelector("#login").style.display = "none";
+            document.querySelector("#panel").style.display = "block";
+        }
+    }
+    checkCookie();
+</script>
+
+</html>
