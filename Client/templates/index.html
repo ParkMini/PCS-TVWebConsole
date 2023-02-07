@@ -15,16 +15,14 @@
 </head>
 
 <body>
-    <video width="100%" height="100%" id="myvideo" autoplay>
+    <video width="100%" height="100%" id="myvideo" autoplay muted>
         <source src="./getvid" type="video/mp4">
     </video>
 </body>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js">
+<script>
     setInterval(() => {
-        if ($("#myvideo").prop("ended")) {
-            location.reload();
-        }
-    }, 100);
+        location.reload()
+    }, 3600);
 </script>
 
 </html>
