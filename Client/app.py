@@ -9,7 +9,7 @@ def main():
 @app.route("/upload", methods=['POST'])
 def upload1():
     f = request.files['file']
-    f.save("./" + secure_filename("video.mp4"))
+    f.save("./static/" + secure_filename("video.mp4"))
     return "true"
 
 @app.route("/getvid")
