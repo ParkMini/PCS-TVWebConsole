@@ -16,6 +16,8 @@ TV에 내장 되어 있는 브라우저 혹은 라즈베리파이를 이용하�
 
 ## Installation
 ```
+git clone https://github.com/ParkMini/PCS-TVWebConsole.git
+cd ./PCS-TVWebConsole
 pip install -r requirements.txt
 ```
 
