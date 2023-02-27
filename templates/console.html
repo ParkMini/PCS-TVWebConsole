@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWC - Console</title>
+</head>
+
+<body>
+    <div id="panel" align="center">
+        <form action="./upload" method="post" enctype="multipart/form-data">
+            <h1>재생중인 영상</h1>
+            <iframe src="./render" frameborder="0" scrolling="no"></iframe>
+            <h1>영상 업로드</h1>
+            <input type="file" name="file" id="file">
+            <input type="submit" value="업로드">
+        </form>
+    </div>
+
+</body>
+
+</html>
