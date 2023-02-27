@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVWebConsole</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        iframe {
+            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0%;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="playerDiv">
+        <iframe id="player" src="/render" height="100%" width="100%" scrolling="no"></iframe>
+    </div>
+    <script>
+        setInterval(() => {
+            const player = document.querySelector("#player");
+            player.remove();
+            const playerDiv = document.querySelector("#playerDiv");
+            playerDiv.innerHTML = '<iframe id="player" src="/render" height="100%" width="100%" scrolling="no"></iframe>';
+        }, 60000);
+    </script>
+</body>
+
+</html>
