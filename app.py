@@ -19,8 +19,8 @@ def console():
 @app.route("/upload", methods=["POST"])
 def upload():
     f = request.files['file']
-    f.save(secure_filename('video.mp4'))
-    return render_template("업로드가 완료되었습니다.")
+    f.save("./static/" + secure_filename('video.mp4'))
+    return "<h1>업로드가 완료되었습니다.\n3초 뒤에 이전 페이지로 이동합니다.</h1><script>setTimeout(() => history.back(), 3000);</script>"
 
 if __name__ == '__main__':
     app.jinja_env.auto_reload = True
